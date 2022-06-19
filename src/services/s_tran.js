@@ -12,7 +12,7 @@ let getAllTran = () => {
         } catch (e) {
             reject(e);
         }
-    })
+    })00
 }
 //tim tran theo id
 let getTranById = (tranId) => {

@@ -20,8 +20,8 @@ let displaygetAllUser = async (req, res) => {
 let postdangki = async (req, res) => {
     let message = await s_user.createUser(req.body);
     // console.log(message);
-    return res.send('post dangki');
-
+    if (message = "ok") return res.status(200).json({ status: "ok" });
+    else return res.send('Fail')
 }
 //tao tran solo
 let postCreateGameSolo = async (req, res) => {
@@ -30,10 +30,7 @@ let postCreateGameSolo = async (req, res) => {
     return res.send('post solo');
 
 }
-let postJoinGameSolo = async (req, res) => {
-    let message = await s_tran.updateIdDoikhach(1);
-    console.log(message);
-}
+p
 
 
 
