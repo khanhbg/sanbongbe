@@ -1,17 +1,20 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Dichvu', {
+    await queryInterface.createTable('Report', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tenDv: {
-        type: Sequelize.STRING
+      time: {
+        type: Sequelize.DATE
       },
-      gia: {
+      numberMatch: {
+        type: Sequelize.INTEGER
+      },
+      revenue: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -25,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Dichvu');
+    await queryInterface.dropTable('Report');
   }
 };

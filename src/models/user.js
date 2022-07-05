@@ -11,24 +11,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.belongsTo(models.Clb, { foreignKey: 'idClb', as: 'r_idClb' })
-      User.hasOne(models.Clb, { foreignKey: 'idDoitruong', as: 'r_Doitruong' })
+      User.hasMany(models.Match, { foreignKey: 'idHomeTeam', as: 'r_idHomeTeam' })
+      User.hasMany(models.Match, { foreignKey: 'idGuestTeam', as: 'r_idGuestTeam' })
+      User.hasMany(models.Comment, { foreignKey: 'idUser', as: 'r_idUser' })
     }
   }
   User.init({
-    ten: DataTypes.STRING,
-    sdt: DataTypes.STRING,
-    mk: DataTypes.STRING,
+    userName: DataTypes.STRING,
+    phoneNumber: DataTypes.STRING,
+    password: DataTypes.STRING,
     role: DataTypes.STRING,
     email: DataTypes.STRING,
-    idClb: DataTypes.INTEGER,
-    ngaysinh: DataTypes.DATE,
-    gioitinh: DataTypes.BOOLEAN,
-    cannang: DataTypes.STRING,
-    chieucao: DataTypes.STRING,
-    vitri: DataTypes.STRING,
-    image: DataTypes.STRING,
-    tien: DataTypes.INTEGER,
+    nameTeam: DataTypes.STRING,
+    describe: DataTypes.STRING,//mo ta clb
+    idTournament: DataTypes.INTEGER,
+    image: DataTypes.BLOB,
+    pointRank: DataTypes.INTEGER,
+    money: DataTypes.INTEGER,
     vip: DataTypes.BOOLEAN,
 
   }, {

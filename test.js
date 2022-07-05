@@ -1,5 +1,5 @@
 // import express from "express";
-// import closeDB from "./DB.js";
+import token from "jsonwebtoken";
 // console.log('Example app listening on port 3000!')
 // let app = express()
 // //const app = express();
@@ -20,10 +20,13 @@
 //   }
 // }
 // export default nguoi;
-var bcrypt = require('bcryptjs');
-bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash("B4c0/\/", salt, function(err, hash) {
-        // Store hash in your password DB.
-    });
-});
-console.log(bcrypt);
+// var bcrypt = require('bcryptjs');
+// bcrypt.genSalt(10, function(err, salt) {
+//     bcrypt.hash("B4c0/\/", salt, function(err, hash) {
+//         // Store hash in your password DB.
+//     });
+// });
+// console.log(bcrypt);
+let data = { id: '123' }
+let tokenId = token.sign(data, 'khanh')
+console.log(tokenId)

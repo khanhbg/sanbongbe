@@ -1,29 +1,34 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Giaidau', {
+    await queryInterface.createTable('Comment', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tenGiai: {
+      type: {
         type: Sequelize.STRING
       },
-      mota: {
-        type: Sequelize.STRING
-      },
-      soluongClb: {
+      idPosts: {
         type: Sequelize.INTEGER
       },
-      ngayBd: {
+      star: {
+        type: Sequelize.FLOAT
+      },
+      content: {
+        type: Sequelize.STRING
+      },
+      idUser: {
+        type: Sequelize.INTEGER
+      },
+      day: {
         type: Sequelize.DATE
       },
-      ngayKt: {
-        type: Sequelize.DATE
+      image: {
+        type: Sequelize.BLOB
       },
-
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -35,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Giaidau');
+    await queryInterface.dropTable('Comment');
   }
 };

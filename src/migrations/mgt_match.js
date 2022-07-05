@@ -1,42 +1,45 @@
 'use strict';
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('Tran', {
+        await queryInterface.createTable('Match', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            type: {
+            idPitch: {
+                type: Sequelize.INTEGER
+            },
+            keyT: {
                 type: Sequelize.STRING //DA GIAI, GIAO LUU..
             },
-            idDoinha: {
+            idHomeTeam: {
                 type: Sequelize.INTEGER
             },
-            idDoikhach: {
+            idGuestTeam: {
                 type: Sequelize.INTEGER
             },
-            gio: {
+            hours: {
                 type: Sequelize.STRING
             },
-            ngay: {
+            day: {
                 type: Sequelize.DATE
             },
-            goalDoinha: {
+            goalHomeTeam: {
                 type: Sequelize.INTEGER
             },
-            goalDoikhach: {
+            goalGuestTeam: {
                 type: Sequelize.INTEGER
             },
-            phi: {
+            deposit: {
                 type: Sequelize.INTEGER
             },
-            ungtruoc: {
+            idTournament: {
                 type: Sequelize.INTEGER
             },
-            idGiai: {
-                type: Sequelize.INTEGER
+            isComplete: {
+                type: Sequelize.BOOLEAN
             },
             createdAt: {
                 allowNull: false,
@@ -49,6 +52,6 @@ module.exports = {
         });
     },
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable('Tran');
+        await queryInterface.dropTable('Match');
     }
 };

@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ten: {
+      userName: {
         type: Sequelize.STRING
       },
-      sdt: {
+      phoneNumber: {
         type: Sequelize.STRING
       },
-      mk: {
+      password: {
         type: Sequelize.STRING
       },
       role: {
@@ -23,28 +23,22 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      idClb: {
+      nameClub: {
+        type: Sequelize.STRING
+      },
+      describe: {
+        type: Sequelize.STRING
+      },
+      idTournament: {
         type: Sequelize.INTEGER
       },
-      ngaysinh: {
-        type: Sequelize.DATE
-      },
-      gioitinh: {
-        type: Sequelize.BOOLEAN
-      },
-      cannang: {
-        type: Sequelize.STRING
-      },
-      chieucao: {
-        type: Sequelize.STRING
-      },
-      vitri: {
-        type: Sequelize.DATE
+      pointRank: {
+        type: Sequelize.INTEGER
       },
       image: {
-        type: Sequelize.STRING
+        type: Sequelize.BLOB
       },
-      tien: {
+      money: {
         type: Sequelize.INTEGER
       },
       vip: {

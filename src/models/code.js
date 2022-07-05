@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Code.hasMany(models.Match, { sourceKey: 'value', foreignKey: 'hours', as: 'codeHours' });
+      Code.belongsTo(models.Services, { targetKey: 'services', foreignKey: 'keyT', as: 'priceServices' });
     }
   }
   Code.init({

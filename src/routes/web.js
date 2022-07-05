@@ -1,11 +1,13 @@
-import express from "express";
-import testRouter from "./test.js"
+
 import userRouter from "./userRouter.js"
+import homeRouter from "./homeRouter.js"
+import adminRouter from "./adminRouter.js"
+import fbRouter from "./fb.js"
 
 let initWebRoutes = (app) => {
-   app.use('/test', testRouter);
    app.use('/user', userRouter);
-   //app.use('/',testRouter);
-   //return app.use
+   app.use('/home', homeRouter);
+   app.use('/admin', adminRouter);
+   app.use('/fb', fbRouter);
 }
 export default initWebRoutes;
